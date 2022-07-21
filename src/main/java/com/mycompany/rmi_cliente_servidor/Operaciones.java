@@ -11,7 +11,9 @@ import java.rmi.RemoteException;
  *
  * @author jt251
  */
-public interface Suma extends Remote{
+public interface Operaciones extends Remote{
     public  String Suma(String a,String b) throws RemoteException;
+    public  String Resta(String a,String b) throws RemoteException;
+    public  String Multiplicacion(String a,String b) throws RemoteException;
     
 }

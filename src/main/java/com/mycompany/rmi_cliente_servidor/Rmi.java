@@ -13,7 +13,7 @@ import java.rmi.server.UnicastRemoteObject;
  *
  * @author jt251
  */
-public class Rmi extends  UnicastRemoteObject implements Suma{
+public class Rmi extends  UnicastRemoteObject implements Operaciones{
 
     public Rmi() throws RemoteException {
     }
@@ -32,5 +32,15 @@ public class Rmi extends  UnicastRemoteObject implements Suma{
     public String Suma(String a, String b) throws RemoteException {
         return String.valueOf(Integer.parseInt(b)+Integer.parseInt(a)) ;
         }
+
+    @Override
+    public String Resta(String a, String b) throws RemoteException {
+        return String.valueOf(Integer.parseInt(b)-Integer.parseInt(a)) ;
+    }
+
+    @Override
+    public String Multiplicacion(String a, String b) throws RemoteException {
+        return String.valueOf(Integer.parseInt(b)*Integer.parseInt(a)) ;
+    }
     
 }

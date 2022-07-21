@@ -22,7 +22,7 @@ public class Servidor {
         
         try {
             Registry e= LocateRegistry.createRegistry(1099);
-            e.rebind("Suma", (Remote) new Rmi());
+            e.rebind("Operaciones", (Remote) new Rmi());
         } catch (Exception e) {
         }
     }

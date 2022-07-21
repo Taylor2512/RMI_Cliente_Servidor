@@ -18,25 +18,41 @@ public class Cliente {
     public static void main(String[] args) {
         String x ="";
         String y ="";
-        String host="//localhost/Suma";
+        String host="//192.168.100.93/Operaciones";
         try {
-            Suma suma = null;
-            suma = (Suma) Naming.lookup(host);
+            Operaciones Operaciones = null;
+            Operaciones = (Operaciones) Naming.lookup(host);
 
             JOptionPane.showMessageDialog(null, "El Cliente se ha conectado");
             while (true) {             
-            String menu =JOptionPane.showInputDialog(null,"Suma de dos numeros\n"
+            String menu =JOptionPane.showInputDialog(null,"Operaciones Aritmeticas\n"
                     + "1.- Sumar\n"
-                    + "2.- Salir\n","Cliente Servidor RPC",JOptionPane.DEFAULT_OPTION);
+                    + "2.- Restar\n"
+                    + "3.- Multiplicar\n"
+                    + "4.- Salir\n","Cliente Servidor RPC",JOptionPane.DEFAULT_OPTION);
                 switch (menu) {
                     case "1":
                         x= JOptionPane.showInputDialog(null, "Primer numero",JOptionPane.QUESTION_MESSAGE);
 
                         y= JOptionPane.showInputDialog(null, "Segundo numero",JOptionPane.QUESTION_MESSAGE);
                    
-                        JOptionPane.showMessageDialog(null,"la suma es"+ suma.Suma(x, y));
+                        JOptionPane.showMessageDialog(null,"El resultado es:  "+ Operaciones.Suma(x, y));
                         break;
-                        case "2":
+                    case "2":
+                        x= JOptionPane.showInputDialog(null, "Primer numero",JOptionPane.QUESTION_MESSAGE);
+
+                        y= JOptionPane.showInputDialog(null, "Segundo numero",JOptionPane.QUESTION_MESSAGE);
+                   
+                        JOptionPane.showMessageDialog(null,"El resultado es:  "+ Operaciones.Resta(x, y));
+                        break;
+                    case "3":
+                        x= JOptionPane.showInputDialog(null, "Primer numero",JOptionPane.QUESTION_MESSAGE);
+
+                        y= JOptionPane.showInputDialog(null, "Segundo numero",JOptionPane.QUESTION_MESSAGE);
+                   
+                        JOptionPane.showMessageDialog(null,"El resultado es:  "+ Operaciones.Multiplicacion(x, y));
+                        break;
+                        case "4":
                             JOptionPane.showMessageDialog(null,"Saliento",null,JOptionPane.WARNING_MESSAGE);
                             System.exit(0);
 
